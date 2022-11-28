@@ -157,4 +157,10 @@
 	//同上，信息更详细
 	git remote -v
 ```
-##  
+
+## 获取远端库的内容
+>假设远端库已经被clone到本地的新文件夹，那么现在就可以把远端的内容拽到本地。
+```
+	//本地只有main分支，从远端获取origin库的feature-D对应到本地新建的feature-D分支
+	git checkout -b feature-D origin/feature-D
+```
