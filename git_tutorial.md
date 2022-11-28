@@ -105,6 +105,8 @@
 ```
 	//查看git的分支列表，当前分支有"*"显示
 	git branch
+	//查看git的分支列表，包括远端的分支列表
+	git branch -a
 
 	//在当前分支上创建新分支，并切换到新分支。参数 -b 表示创建分支
 	git checkout -b feature-A
@@ -155,3 +157,4 @@
 	//同上，信息更详细
 	git remote -v
 ```
+##  
