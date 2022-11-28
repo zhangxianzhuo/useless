@@ -161,6 +161,10 @@
 ## 获取远端库的内容
 >假设远端库已经被clone到本地的新文件夹，那么现在就可以把远端的内容拽到本地。
 ```
-	//本地只有main分支，从远端获取origin库的feature-D对应到本地新建的feature-D分支
+	//本地只有main分支，从远端获取origin库的feature-D分支，对应到本地新建的feature-D分支
 	git checkout -b feature-D origin/feature-D
+	//如果其他人使用feature-D改变了README.md文件，需要将该分支的文件同步到本地，先切换到feature-D分支，然后再将远端的分支拖拽到本地。否则可能会造成主分支与其他分支合并的意外状况。
+	git checkout feature-D
+	//使用远端origin库的feature-D分支来更新本地的feature-D分支
+	git pull origin feature-D
 ```
