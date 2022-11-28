@@ -144,7 +144,7 @@
 	git remote add origin git@github.com:name/repositoryname.git
 	//强制将主分支名称改名为main，为了与远端名称匹配
 	git branch -M main
-	//推送到上游库的分支，-u表示此操作是向上游推送，origin上游库链接的别名，main是上游库的主分支。上游也可以理解为远端。
+	//推送到上游库的分支，-u表示此操作是向上游推送，并且将本地库与上游库做了映射，方便以后推送就不用输入 -u origin main 了，origin上游库链接的别名，main是上游库的主分支。上游也可以理解为远端。
 	git push -u origin main
 
 	//更改远程库链接别名，将origin改为useless
