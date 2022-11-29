@@ -1,4 +1,4 @@
-## github使用指南[引用地址1](https://www.zhihu.com/question/27712995)
+## github使用指南[引用地址1](https://www.zhihu.com/question/27712995)[引用地址2](https://git-scm.com/book/zh/v2)[引用地址3](https://learngitbranching.js.org/?locale=zh_CN)[引用地址4](https://docs.github.com/en/get-started/quickstart/set-up-git)
 >首先得说github大致上是用于在线开发的这么一个工具，他可以支持多人同时编辑一个项目。有许多强大的功能，其中一个主要的功能是repository库，他可以把创建的项目放入这个库里。并可以实现对代码的分支编辑（对一个程序代码的新增功能单独建立分支）然后把分支的程序代码合并到主程序里。还有时间线的的返回，可以回到以前编辑的代码时间点的功能等等。
 1. 先在网络上申请一个帐号，输入你的邮箱和用户名（用户名不能重复），顺利生成后就可以登录github了。
 2. 若是要在线下进行编辑，并能同步到github并且有时间线和分支就要安装git工具，可以把他看成是一个命令行工具，里面有专门针对代码（程序）的提交，查看日志，创建分支和恢复时间线的功能。git分为github cli与github desktop，前者是命令行，后者是页面操作。
@@ -168,3 +168,4 @@
 	//使用远端origin库的feature-D分支来更新本地的feature-D分支
 	git pull origin feature-D
 ```
+
