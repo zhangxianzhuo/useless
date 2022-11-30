@@ -156,6 +156,9 @@
 	git remote
 	//同上，信息更详细
 	git remote -v
+	
+	//删除本地对远端库的映射
+	git remote remove origin
 ```
 
 ## 获取远端库的内容
