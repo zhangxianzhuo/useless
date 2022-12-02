@@ -1,4 +1,5 @@
-## github使用指南[引用地址1](https://www.zhihu.com/question/27712995)[引用地址2](https://git-scm.com/book/zh/v2)[引用地址3](https://learngitbranching.js.org/?locale=zh_CN)[引用地址4](https://docs.github.com/en/get-started/quickstart/set-up-git)
+# github使用指南
+[参考地址1](https://www.zhihu.com/question/27712995)[参考地址2](https://git-scm.com/book/zh/v2)[参考地址3](https://learngitbranching.js.org/?locale=zh_CN)[参考地址4](https://docs.github.com/en/get-started/quickstart/set-up-git)
 >首先得说github大致上是用于在线开发的这么一个工具，他可以支持多人同时编辑一个项目。有许多强大的功能，其中一个主要的功能是repository库，他可以把创建的项目放入这个库里。并可以实现对代码的分支编辑（对一个程序代码的新增功能单独建立分支）然后把分支的程序代码合并到主程序里。还有时间线的的返回，可以回到以前编辑的代码时间点的功能等等。
 1. 先在网络上申请一个帐号，输入你的邮箱和用户名（用户名不能重复），顺利生成后就可以登录github了。
 2. 若是要在线下进行编辑，并能同步到github并且有时间线和分支就要安装git工具，可以把他看成是一个命令行工具，里面有专门针对代码（程序）的提交，查看日志，创建分支和恢复时间线的功能。git分为github cli与github desktop，前者是命令行，后者是页面操作。
@@ -11,7 +12,9 @@
 8. 根据需要退到历史中的节点（每一次提交的位置），用校验码的前六位
 9. 将完善后的代码合并到主分支main。
 
-## 设置git的环境
+<details id=1>
+<summary><h2>设置git的环境</h2></summary>
+
 ```
 	//配置用户名,添加到~/.gitconfig文件里
 	git config --global user.name "firstname lastname"
@@ -19,8 +22,14 @@
 	git config --global user.email "name@company.name"
 	//配置颜色显示，便于查看错误
 	git config --global color.ui auto
+
 ```
-## 生成ssh key
+
+</details>
+
+<details id=2>
+<summary><h2>生成ssh key</h2></summary>
+
 ```
 	//生成一个sshkey
 	ssh-keygen -t ed25519 -C "your_email@example.com"
@@ -34,7 +43,11 @@
 ```
 3. 会要求你输入密码，输入之前设置的密码就可以看到成功的提示。
 
-## 克隆github上的库到本地
+</details>
+
+<details id=3>
+<summary><h2>克隆github上的库到本地</h2></summary>
+
 ```
 	//username换成用户名，repositoryname换成库名，这条信息可以在code里查询到，并直接复制。
 	git clone git@github.com:username/repositoryname.git
@@ -42,9 +55,11 @@
 	//复制好后，就可以进入这个路径查看里面的文件
 	cd repositoryname
 ```
+
 1. 然后就可以向这个库里添加代码了。
 2. 在git（bash里）可以用vi来编辑代码，要直接创建在这个库文件夹下。
 3. 比如创建一个hello.py文件。
+
 ```
 	//在库文件夹下，比如 python-learning 是库名
 	vi hello.py
@@ -52,8 +67,12 @@
 	print ("hello world!")
 ```
 
-## 添加代码文件到git库
+</details>
+<details id=4>
+<summary><h2>添加代码文件到git库</h2></summary>
+
 >创建好文件后就可以把文件放入到git库了
+
 ```
 	//查看状态使用以下命令
 	git status
@@ -72,7 +91,10 @@
 	git commit -am "Add feature-C"
 ```
 
-## 初始化库
+</details>
+<details id=5>
+<summary><h2>初始化库</h2></summary>
+
 ```
 	//创建一个库的目录
 	mkdir git-tutorial
@@ -100,7 +122,11 @@
 	//查看与最新的提交的区别
 	git diff head
 ```
-## 使用git的分支进行作业
+
+</details>
+<details id=6>
+<summary><h2>使用git的分支进行作业</h2></summary>
+
 1. 创建与切换分支
 ```
 	//查看git的分支列表，当前分支有"*"显示
@@ -130,7 +156,10 @@
 	git log --graph
 ```
 
-## 回溯历史版本
+</details>
+<details id=7>
+<summary><h2>回溯历史版本</h2></summary>
+
 ```
 	//回到创建分支前的历史节点（索引的哈希值）的对应时间
 	git reset --hard 哈希值
@@ -139,8 +168,13 @@
 	//查看回溯历史之前的分支日志
 	git reflog
 ```
-## 将本地的库推送到远端的github库
+
+</details>
+<details id=8>
+<summary><h2>将本地的库推送到远端的github库</h2></summary>
+
 >首先要在github上新建一个库与本地库同名，不要自动建立README文档。然后依次运行以下命令。
+
 ```
 	//添加远端库，告诉本地库你远端库的地址，远端库链接的别名是origin
 	git remote add origin git@github.com:name/repositoryname.git
@@ -163,8 +197,12 @@
 	git remote remove origin
 ```
 
-## 获取远端库的内容
+</details>
+<details id=9>
+<summary><h2>获取远端库的内容</h2></summary>
+
 >假设远端库已经被clone到本地的新文件夹，那么现在就可以把远端的内容拽到本地。
+
 ```
 	//本地只有main分支，从远端获取origin库的feature-D分支，对应到本地新建的feature-D分支
 	git checkout -b feature-D origin/feature-D
@@ -174,3 +212,23 @@
 	git pull origin feature-D
 ```
 
+</details>
+<details id=10>
+<summary><h2>使用fetch同步远端库来更新本地库内容</h2></summary>
+
+```
+	//先将github上某用户的库fork到自己的库
+	//然后在本地目录clone自已远端刚fork的库
+	git clone git@github:user/repositoryname.git
+
+	//为上一步某用户的原始库设置别名，加入到config文件中
+	git remote add upstream git@github:otheruser/repositoryname.git
+
+	//每次编写代码前可以用fetch命令来获取原始库的数据(更新自己本地库)
+	git fetch upstream
+
+	//合并刚获取到的数据到本地库的分支
+	git merge upstream/main
+```
+
+</details>
