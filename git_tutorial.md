@@ -23,6 +23,9 @@
 	//配置颜色显示，便于查看错误
 	git config --global color.ui auto
 
+	//单独为repository设置环境，先进到库文件夹下，再输入下面指令
+	git config user.name "username"
+	git config user.email "name@company.com"
 ```
 
 </details>
@@ -33,15 +36,15 @@
 ```
 	//生成一个sshkey
 	ssh-keygen -t ed25519 -C "your_email@example.com"
-	//然后会让你选择一个存储路径，如果不选就直接回车
-	//还会让你设置一个密码，并进行密码确认
+	//之后会让你选择一个存储路径和密钥名，如果使用默认路径与文件名就直接回车
+	//还会让你设置一个使用此密钥的密码，并进行密码确认
 ```
-1. 生成完sshkey需要把public key的信息填入到github的sshkey里，就添加成功了。
+1. 生成完sshkey需要把public key的信息填入到github的sshkey里，github的sshkey就添加成功了。
 2. 然后可以在本地测试一下与github的联通。
 ```
 	ssh -T git@github.com
 ```
-3. 会要求你输入密码，输入之前设置的密码就可以看到成功的提示。
+3. 会要求你输入密码，输入之前设置的密码就可以看到成功的提示。后面会介绍ssh-agent代理密码的功能，方便不用每次都输入密码确认
 
 </details>
 
@@ -52,7 +55,7 @@
 	//username换成用户名，repositoryname换成库名，这条信息可以在code里查询到，并直接复制。
 	git clone git@github.com:username/repositoryname.git
 
-	//复制好后，就可以进入这个路径查看里面的文件
+	//复制好后，就可以进入这个路径查看里面的文件，默认本地库的配置文件都自动生成好了
 	cd repositoryname
 ```
 
@@ -87,6 +90,8 @@
 	git push
 ```
 ```
+	//提交到远端库并设置要提交到的分支
+	git push -u origin feature-C
 	//同时增加文件到暂存区并提交
 	git commit -am "Add feature-C"
 ```
@@ -145,7 +150,7 @@
 	//切换上一分支（有点像linux的切换上一路径 cd -）
 	git checkout -
 ```
-2. 合并分支
+2. 合并分支[快进分支](https://blog.csdn.net/zombres/article/details/82179122)
 ```
 	//切换到主干分支，主干分支的名字因版本有所区别
 	git checkout master/main
